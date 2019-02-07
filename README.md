@@ -1,7 +1,7 @@
 # CS 192
 
 ## installation guide
-This installation only works for windows.
+This installation only works for windows. The installers are found in the folder *installers or dependencies*
 
 ### install python
 run the installer
@@ -52,3 +52,4 @@ it will then ask you to log-in. But first you must create an account. To do that
 ```
 python manage.py createsuperuser
 ```
+You will be then asked to choose a username, email, and password
