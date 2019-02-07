@@ -1,7 +1,7 @@
 # CS 192
 
-## installation guide
-This installation only works for windows. The installers are found in the folder *installers or dependencies*
+## WINDOWS installation guide 
+he installers are found in the folder *installers or dependencies*
 
 First, press clone or download from the github website.
 
@@ -38,6 +38,13 @@ run the installer
 ```
 GitHubDesktopSetup.exe
 ```
+## LINUX installation guide 
+open the folder you want to store the files. Open up terminal and type
+
+```
+git clone https://github.com/cidazc/CS-192.git
+```
+
 ## running guide
 
 open command prompt and type
