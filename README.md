@@ -45,6 +45,12 @@ open the folder you want to store the files. Open up terminal and type
 git clone https://github.com/cidazc/CS-192.git
 ```
 
+### install django
+open command prompt and type
+```
+pip install django
+```
+
 ## running guide
 
 open command prompt and type
