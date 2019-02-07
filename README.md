@@ -3,6 +3,8 @@
 ## installation guide
 This installation only works for windows. The installers are found in the folder *installers or dependencies*
 
+First, press clone or download from the github website.
+
 ### install python
 run the installer
 ```
