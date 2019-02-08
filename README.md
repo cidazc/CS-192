@@ -1,8 +1,25 @@
 # CS 192
 
-hello world
+For sprint 2:
+extra stuff:
+-add flow for login and creation
+-creation: distinction between moderator and contributor
+-multiple moderators??
 
-## WINDOWS installation guide 
+
+create account with details (choose your details)
+
+flow:
+login as contributor -> add translation
+login as contributor -> search translation
+no login -> search translation
+
+-login makikita you
+needed stuff:
+-add translation
+-search for word
+
+## WINDOWS installation guide
 he installers are found in the folder *installers or dependencies*
 
 First, press clone or download from the github website.
@@ -40,7 +57,7 @@ run the installer
 ```
 GitHubDesktopSetup.exe
 ```
-## LINUX installation guide 
+## LINUX installation guide
 open the folder you want to store the files. Open up terminal and type
 
 ```
