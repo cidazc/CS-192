@@ -1,5 +1,7 @@
 # CS 192
 
+hello world
+
 ## WINDOWS installation guide 
 he installers are found in the folder *installers or dependencies*
 
