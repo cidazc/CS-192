@@ -62,9 +62,20 @@ then open up your browser to the link:
 ```
 localhost:8000
 ```
+### create user
 
 it will then ask you to log-in. But first you must create an account. To do that, close the webserver (CTRL + C). And go to terminal again and type
 ```
 python manage.py createsuperuser
 ```
 You will be then asked to choose a username, email, and password
+
+Username: **admin**
+Password: **password**
+
+### delete user
+```
+ python manage.py shell
+from django.contrib.auth.models import User
+User.objects.get(username="admin", is_superuser=True).delete()
+```
