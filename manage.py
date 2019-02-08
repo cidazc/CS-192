@@ -1,4 +1,4 @@
-'''
+"""
 MIT License
 
 Copyright (c) 2019 Jose Carlos Rodrigo Azcarraga, Allan Mariano, Reyster Fresco
@@ -32,7 +32,8 @@ Information:
      development group: Salin - Group 2
      client group: CS 192 WFUV AY1819
      purpose: main python file for running the django app
-'''
+
+"""
 
 #!/usr/bin/env python
 import os
