@@ -46,5 +46,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'), # new
     path('delete', views.delete),
     path('add', views.add),
+    path('delete2', views.delete2),
+    path('add2', views.add2),
     path('moderator', views.moderator)
 ]
