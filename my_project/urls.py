@@ -89,5 +89,6 @@ urlpatterns = [
     path('add', views.add),
     path('delete2', views.delete2),
     path('add2', views.add2),
+    path('addTranslation', views.addTranslation),
     path('moderator', views.moderator)
 ]
