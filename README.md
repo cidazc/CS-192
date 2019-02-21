@@ -1,23 +1,28 @@
 # CS 192
 
-For sprint 2:
-extra stuff:
--add flow for login and creation
--creation: distinction between moderator and contributor
--multiple moderators??
+**For sprint 2:(for the eyes of the team)**
+*UX:*
+-choose frontend (react, vue.js)
+-add flow from log-in to user creation
+-user creation: make a distinction between contributor and moderator
+-moderator has special priviledges (deleting accounts, creating accounts)
+-user creation: user can choose details (name, password etc.)
+-flow: log-in (contributor) -> add translation as contributor
+-flow2: log-in (contributor) -> search translation
+-flow3: no log-in -> search translation
+-UX design
+-UX implementation
 
+*Search:* (dito yung irereview ni mam yung 2 use cases natin)
+-add translation feature (note all the info the database needs to store, work with DB person)
+-search translation feature
 
-create account with details (choose your details)
-
-flow:
-login as contributor -> add translation
-login as contributor -> search translation
-no login -> search translation
-
--login makikita you
-needed stuff:
--add translation
--search for word
+*DB:*
+-install postgre
+-connect postgre and django
+-make postgre work on github
+-design table and schema
+-code queries
 
 ## WINDOWS installation guide
 he installers are found in the folder *installers or dependencies*
@@ -80,21 +85,4 @@ python manage.py runserver
 then open up your browser to the link:
 ```
 localhost:8000
-```
-### create user
-
-it will then ask you to log-in. But first you must create an account. To do that, close the webserver (CTRL + C). And go to terminal again and type
-```
-python manage.py createsuperuser
-```
-You will be then asked to choose a username, email, and password
-
-Username: **admin**
-Password: **password**
-
-### delete user
-```
- python manage.py shell
-from django.contrib.auth.models import User
-User.objects.get(username="admin", is_superuser=True).delete()
 ```

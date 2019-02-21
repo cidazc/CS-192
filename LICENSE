@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2019 Jose Carlos Rodrigo Azcarraga, Allan Mariano, Reyster Fresco
@@ -19,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2015-2016.
+
+Code History:
+       -CID AZCARRAGA|FEB-7-2019| Creation of this Code
+       -CID AZCARRAGA|FEB-*-2019| Addition of License, Code History, and other Information to Code
+    
+Information:
+     file creation: This was generated February 7, 2019.
+     development group: Salin - Group 2
+     client group: CS 192 WFUV AY1819
+     purpose: LICENSE FOR THE ENTIRE SOURCE CODE
+
+"""
