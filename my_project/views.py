@@ -58,6 +58,7 @@ Information:
 from django.contrib.auth.models import User
 from django.conf.urls import url
 from django.http import HttpResponse
+from my_project.models import Translation
 
 def home(request):
     return HttpResponse('<h1> Welcome </h1>')
@@ -175,6 +176,47 @@ def add2(request):
         </html>'''
         return HttpResponse(html)
 
+def addTranslation(request):
+    #try:
+    b = Translation()
+    b.origin_language = "Visaya"
+    b.target_language = "Filipino"
+    b.origin_text = "ambot"
+    b.target_text = "ewan"
+    b.context_examples = "ambot sa imo"
+    b.upvotes = 69
+    b.downvotes = 1
+    b.save()
+
+    title = 'Translation Added!'
+    html = '''<!DOCTYPE html>
+    <html>
+    <head>
+        <title>''' + title + '''</title>
+    </head>
+    <body>
+        <h1>Translation added</h1>
+    </body>
+    </html>'''
+    return HttpResponse(html)
+    #except: 
+    '''
+        title = 'Error'
+        html = <!DOCTYPE html>
+        <html>
+        <head>
+            <title> + title + </title>
+        </head>
+        <body>
+            <h1>Error!!</h1>
+        </body>
+        </html>
+        return HttpResponse(html) 
+
+    '''
+
+
+
 def moderator(request):
     title = 'User added'
     html = '''<!DOCTYPE html>
@@ -200,6 +242,7 @@ urlpatterns = [
     url(r'^delete2/$', delete2),
     url(r'^moderator/$', moderator),
     url(r'^add/$', add),
-    url(r'^add2/$', add2)
+    url(r'^add2/$', add2),
+    url(r'^add/$', addTranslation)
 
 ]

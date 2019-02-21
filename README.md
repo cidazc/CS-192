@@ -1,29 +1,5 @@
 # CS 192
 
-**For sprint 2:(for the eyes of the team)**
-*UX:*
--choose frontend (react, vue.js)
--add flow from log-in to user creation
--user creation: make a distinction between contributor and moderator
--moderator has special priviledges (deleting accounts, creating accounts)
--user creation: user can choose details (name, password etc.)
--flow: log-in (contributor) -> add translation as contributor
--flow2: log-in (contributor) -> search translation
--flow3: no log-in -> search translation
--UX design
--UX implementation
-
-*Search:* (dito yung irereview ni mam yung 2 use cases natin)
--add translation feature (note all the info the database needs to store, work with DB person)
--search translation feature
-
-*DB:*
--install postgre
--connect postgre and django
--make postgre work on github
--design table and schema
--code queries
-
 ## WINDOWS installation guide
 he installers are found in the folder *installers or dependencies*
 
