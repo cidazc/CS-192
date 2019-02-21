@@ -62,3 +62,10 @@ then open up your browser to the link:
 ```
 localhost:8000
 ```
+
+## create admin role
+
+open command prompt and type
+```
+python manage.py createsuperuser
+```
