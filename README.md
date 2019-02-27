@@ -1,5 +1,21 @@
 # CS 192
 
+## Git guide
+
+Committing and pushing
+```
+git add .
+git commit -m "your comment"
+git push origin branchName
+```
+
+move to branchName
+```
+git checkout branchName
+git pull origin branchName
+```
+
+
 ## WINDOWS installation guide
 he installers are found in the folder *installers or dependencies*
 
