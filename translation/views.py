@@ -47,5 +47,5 @@ def blog(request, id=id):
     return render(request, 'translation/blog.html', {'blog': blog})
 
 def translation(request, id=id):
-    trnaslation = Translation.objects.get(id=id)
+    translation = Translation.objects.get(id=id)
     return render(request, 'translation/translation.html', {'translation': translation})

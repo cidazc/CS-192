@@ -1,9 +1,12 @@
 {% extends 'translation/base.html'%}
 {% block content %}
-<h1> {{ translation.origin_language }} </h1>
-<h1> {{ translation.target_language }} </h1>
-<h2> {{ translation.origin_text }} </h2>
-<h2> {{ translation.target_text }} </h2>
-<p> {{translation.upvotes}} </p>
-<p> {{translation.downvotes}} </p>
+<h3> Origin Language: {{ translation.origin_language }} </h1>
+<h3> Target Language: {{ translation.target_language }} </h1>
+<h1> Origin Text: {{ translation.origin_text }} </h2>
+<h1> Target Text:{{ translation.target_text }} </h2>
+<p> Upvotes: {{translation.upvotes}} </p>
+<p> Downvotes: {{translation.downvotes}} </p>
+<p> Context: {{translation.context_examples}} </p>
+
+
 {% endblock %}
