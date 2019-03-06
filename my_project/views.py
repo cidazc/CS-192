@@ -58,7 +58,7 @@ Information:
 from django.contrib.auth.models import User
 from django.conf.urls import url
 from django.http import HttpResponse
-from my_project.models import Translation
+#from my_project.models import Translation
 
 def home(request):
     #return HttpResponse('<h1> Welcome </h1>')
@@ -219,7 +219,7 @@ def add2(request):
         </body>
         </html>'''
         return HttpResponse(html)
-
+'''
 def addTranslation(request):
     #try:
     b = Translation()
@@ -233,18 +233,17 @@ def addTranslation(request):
     b.save()
 
     title = 'Translation Added!'
-    html = '''<!DOCTYPE html>
+    html = <!DOCTYPE html>
     <html>
     <head>
-        <title>''' + title + '''</title>
+        <title> + title + </title>
     </head>
     <body>
         <h1>Translation added</h1>
     </body>
-    </html>'''
+    </html>
     return HttpResponse(html)
     #except:
-    '''
         title = 'Error'
         html = <!DOCTYPE html>
         <html>
@@ -256,9 +255,7 @@ def addTranslation(request):
         </body>
         </html>
         return HttpResponse(html)
-
-    '''
-
+'''
 
 
 def moderator(request):
@@ -278,15 +275,3 @@ def moderator(request):
     </body>
     </html>'''
     return HttpResponse(html)
-
-
-urlpatterns = [
-    url(r'^$', home),
-    url(r'^delete/$', delete),
-    url(r'^delete2/$', delete2),
-    url(r'^moderator/$', moderator),
-    url(r'^add/$', add),
-    url(r'^add2/$', add2),
-    url(r'^add/$', addTranslation)
-
-]

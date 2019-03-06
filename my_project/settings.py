@@ -26,7 +26,7 @@ This is a course requirement for CS 192 Software Engineering II under the superv
 Code History:
        -CID AZCARRAGA|FEB-7-2019| Creation of this Code
        -CID AZCARRAGA|FEB-*-2019| Addition of License, Code History, and other Information to Code
-    
+
 Information:
      file creation: This was generated February 7, 2019.
      development group: Salin - Group 2
@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'translation',
 ]
 
 MIDDLEWARE = [

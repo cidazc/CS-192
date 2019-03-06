@@ -1,12 +1,12 @@
 
 """
 
-Allan Matthew B. Mariano 
+Allan Matthew B. Mariano
 2015-05804
 
 
 “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof.
- Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, 
+ Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines,
  Diliman for the AY 2018-2019”.
 
 """
@@ -51,7 +51,7 @@ Code History:
        -ALLAN MARIANO|FEB-8-2019| Modification of the Code to Add Paths
        -CID AZCARRAGA & REYSTER FRESCO|FEB-8-2019| Modification of the Code to Add Paths
        -CID AZCARRAGA|FEB-*-2019| Addition of License, Code History, and other Information to Code
-    
+
 Information:
      file creation: This was generated February 7, 2019.
      development group: Salin - Group 2
@@ -81,6 +81,9 @@ from django.contrib import admin
 from . import views
 from django.urls import path, include # new
 from django.views.generic.base import TemplateView # new
+
+from django.conf.urls import url, include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')), # new
@@ -89,6 +92,7 @@ urlpatterns = [
     path('add', views.add),
     path('delete2', views.delete2),
     path('add2', views.add2),
-    path('addTranslation', views.addTranslation),
-    path('moderator', views.moderator)
+#    path('addTranslation', views.addTranslation),
+    path('moderator', views.moderator),
+    url(r'^', include('translation.urls')),
 ]
