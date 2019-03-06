@@ -1,0 +1,9 @@
+{% extends 'translation/base.html'%}
+{% block content %}
+<h1> {{ translation.origin_language }} </h1>
+<h1> {{ translation.target_language }} </h1>
+<h2> {{ translation.origin_text }} </h2>
+<h2> {{ translation.target_text }} </h2>
+<p> {{translation.upvotes}} </p>
+<p> {{translation.downvotes}} </p>
+{% endblock %}
