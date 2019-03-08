@@ -6,14 +6,13 @@
 
 """
 
-Allan Matthew B. Mariano 
+Allan Matthew B. Mariano
 2015-05804
 
 
 “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof.
- Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, 
- Diliman for the AY 2018-2019”.
-
+Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines,
+Diliman for the AY 2018-2019”.
 """
 
 
@@ -49,7 +48,7 @@ This is a course requirement for CS 192 Software Engineering II under the superv
 Code History:
        -ALLAN MARIANO|FEB-7-2019| Creation of this Code
        -CID AZCARRAGA|FEB-*-2019| Addition of License, Code History, and other Information to Code
-    
+
 Information:
      file creation: This was generated February 7, 2019.
      development group: Salin - Group 2

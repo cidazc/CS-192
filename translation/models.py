@@ -12,8 +12,7 @@ class Translation(models.Model):
 	downvotes = models.IntegerField(default=10)
 
 
-class Blog(models.Model):
-    title = models.CharField(max_length=255, default='HelloWorld', blank=True)
-    description = models.TextField(default='', blank=True)
+class Search(models.Model):
+    search_text = models.CharField(max_length=255, default='Add a value here', blank=True)
     def __str__(self):
-        return '%s' % self.title
+        return '%s' % self.search_text
