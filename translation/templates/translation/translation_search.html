@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p> origin_language -
+    target_language -
+    origin_text -
+    target_text -
+    context_examples -
+    upvotes -
+    downvotes
+</p>
+{% for instance in object_list %}
+  <p> {{ instance.origin_language }} -
+      {{ instance.target_language }} -
+      {{ instance.origin_text }} -
+      {{ instance.target_text }} -
+      {{ instance.context_examples }} -
+      {{ instance.upvotes }} -
+      {{ instance.downvotes }}
+  </p>
+  <br>
+{% endfor %}
+
+{% endblock %}

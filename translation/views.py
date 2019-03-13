@@ -18,6 +18,20 @@ class TranslationListView(ListView):
     template_name = 'translation/translation_list.html'
     queryset = Translation.objects.all()
 
+class TranslationSearchView(ListView):
+    template_name = 'translation/translation_search.html'
+    model = Translation
+
+    def get_queryset(self):
+        try:
+            name = self.kwargs['name']
+        except:
+            name = ''
+        if (name!=''):
+            object_list = self.model.objects.filter(name__icontains = name)
+        else:
+            object_list = self.model.objects.all()
+        return object_list
 
 def add_search(request):
     if request.method == "POST":
