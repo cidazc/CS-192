@@ -14,6 +14,11 @@ git commit -m "your comment"
 git push origin branchName
 ```
 
+create a testing branch called new_branch_name
+```
+git checkout -b new_branch_name
+```
+
 move to branchName
 ```
 git checkout branchName
