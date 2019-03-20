@@ -2,7 +2,8 @@ from django.conf.urls import url
 from django.urls import path
 from . import views
 from .views import(
-    TranslationListView
+    TranslationListView,
+    TranslationSearch
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     url(r'^translation/(?P<id>\d+)/$', views.translation, name='translation'),
     url(r'^search/(?P<id>\d+)/$', views.search, name='search'),
     path('translation/', TranslationListView.as_view(), name = 'translation-list'),
+    path('translation_search/', TranslationSearch.as_view(), name = 'translation-search'),
 ]

@@ -18,20 +18,15 @@ class TranslationListView(ListView):
     template_name = 'translation/translation_list.html'
     queryset = Translation.objects.all()
 
-class TranslationSearchView(ListView):
-    template_name = 'translation/translation_search.html'
+class TranslationSearch(ListView):
     model = Translation
 
     def get_queryset(self):
-        try:
-            name = self.kwargs['name']
-        except:
-            name = ''
-        if (name!=''):
-            object_list = self.model.objects.filter(name__icontains = name)
-        else:
-            object_list = self.model.objects.all()
-        return object_list
+        origin_text = self.kwargs["origin_text"]
+        if origin_text:
+            return self.model.objects.filter(body__icontains=origin_text)
+        return self.model.objects.none()
+
 
 def add_search(request):
     if request.method == "POST":
@@ -42,7 +37,7 @@ def add_search(request):
             return redirect('/search/'+str(search_item.id)+'/')
     else:
         form = SearchForm()
-    return render(request, 'translation/search_form.html', {'form':form})
+    return render(request, 'translation/search_list.html', {'form':form})
 
 def add_translation(request):
     if request.method == "POST":
