@@ -1,4 +1,34 @@
 # CS 192
+#### This app  is made to translate languages in a really crude way.
+##### The creators - Reyster, Allan, Cid
+
+## Running guide
+
+In terminal type
+```
+python manage.py runserver
+```
+
+Open up your browser to the link:
+```
+localhost:8000
+```
+
+## Create admin role
+
+in terminal
+```
+python manage.py createsuperuser
+```
+
+## Saving new models
+
+In terminal type
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 
 ## Git guide
 
@@ -43,10 +73,6 @@ git clean -f
 
 
 ## WINDOWS installation guide
-he installers are found in the folder *installers or dependencies*
-
-First, press clone or download from the github website.
-
 ### install python
 run the installer
 ```
@@ -80,30 +106,11 @@ run the installer
 ```
 GitHubDesktopSetup.exe
 ```
-## LINUX installation guide
 
+## LINUX installation guide
 
 ### install django
 open command prompt and type
 ```
 pip install django
-```
-
-## running guide
-
-open command prompt and type
-```
-python manage.py runserver
-```
-
-then open up your browser to the link:
-```
-localhost:8000
-```
-
-## create admin role
-
-open command prompt and type
-```
-python manage.py createsuperuser
 ```
