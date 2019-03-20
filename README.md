@@ -32,6 +32,10 @@ git merge -s ours master
 git checkout master
 git merge branchName
 
+
+If you've made a mistake and want to revert back to an old commit
+```
+git reset --hard HEAD
 ```
 
 
