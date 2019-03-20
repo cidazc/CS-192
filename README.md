@@ -14,14 +14,14 @@ Open up your browser to the link:
 localhost:8000
 ```
 
-## Create admin role
+### Create admin role
 
 in terminal
 ```
 python manage.py createsuperuser
 ```
 
-## Saving new models
+### Saving new models
 
 In terminal type
 ```
