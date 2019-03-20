@@ -14,6 +14,7 @@ git commit -m "your comment"
 git push origin branchName
 ```
 
+testing branches - make these so you wouldn't edit the master directly and to avoid breaking the main code
 create a testing branch called new_branch_name
 ```
 git checkout -b new_branch_name
