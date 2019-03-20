@@ -2,6 +2,11 @@
 
 ## Git guide
 
+First time getting the git files
+```
+git clone https://github.com/cidazc/CS-192.git
+```
+
 Committing and pushing
 ```
 git add .
@@ -13,6 +18,15 @@ move to branchName
 ```
 git checkout branchName
 git pull origin branchName
+```
+
+merging branchName with master
+```
+git checkout branchName
+git merge -s ours master
+git checkout master
+git merge branchName
+
 ```
 
 
@@ -55,11 +69,7 @@ run the installer
 GitHubDesktopSetup.exe
 ```
 ## LINUX installation guide
-open the folder you want to store the files. Open up terminal and type
 
-```
-git clone https://github.com/cidazc/CS-192.git
-```
 
 ### install django
 open command prompt and type
