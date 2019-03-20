@@ -36,6 +36,8 @@ git merge branchName
 If you've made a mistake and want to revert back to an old commit
 ```
 git reset --hard HEAD
+git clean -n
+git clean -f
 ```
 
 
