@@ -1,24 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p> origin_language -
-    target_language -
-    origin_text -
-    target_text -
-    context_examples -
-    upvotes -
-    downvotes
-</p>
+<table>
+  <tr>
+    <th>Origin Language</th>
+    <th>Target_Language</th>
+    <th>Origin Text</th>
+    <th>Target Text</th>
+    <th>Context Examples</th>
+    <th>Upvotes</th>
+    <th>Downvotes</th>
+  </tr>
 {% for instance in object_list %}
-  <p> {{ instance.origin_language }} -
-      {{ instance.target_language }} -
-      {{ instance.origin_text }} -
-      {{ instance.target_text }} -
-      {{ instance.context_examples }} -
-      {{ instance.upvotes }} -
-      {{ instance.downvotes }}
-  </p>
-  <br>
+  <tr>
+      <td> {{ instance.origin_language }} </td>
+      <td> {{ instance.target_language }} </td>
+      <td> {{ instance.origin_text }} </td>
+      <td> {{ instance.target_text }} </td>
+      <td> {{ instance.context_examples }} </td>
+      <td> {{ instance.upvotes }} </td>
+      <td> {{ instance.downvotes }} </td>
+  </tr>
 {% endfor %}
+</table>
 
 {% endblock %}

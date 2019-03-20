@@ -1,29 +1,31 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<form method="GET" action="/translation/">
-<input type="text" name="q" placeholder="Search">
-</form>
-
-
-<p> origin_language -
-    target_language -
-    origin_text -
-    target_text -
-    context_examples -
-    upvotes -
-    downvotes
-</p>
-{% for instance in object_list %}
-  <p> {{ instance.origin_language }} -
-      {{ instance.target_language }} -
-      {{ instance.origin_text }} -
-      {{ instance.target_text }} -
-      {{ instance.context_examples }} -
-      {{ instance.upvotes }} -
-      {{ instance.downvotes }}
-  </p>
-  <br>
-{% endfor %}
-
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    <table>
+      <tr>
+        <th>Origin Language</th>
+        <th>Target_Language</th>
+        <th>Origin Text</th>
+        <th>Target Text</th>
+        <th>Context Examples</th>
+        <th>Upvotes</th>
+        <th>Downvotes</th>
+      </tr>
+    {% for obj in filter.qs %}
+        <tr>
+        <td> {{ obj.origin_language }} </td>
+        <td> {{ obj.target_language }} </td>
+        <td> {{ obj.origin_text }} </td>
+        <td> {{ obj.target_text }} </td>
+        <td> {{ obj.context_examples }} </td>
+        <td> {{ obj.upvotes }} </td>
+        <td> {{ obj.downvotes }} </td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}
+    </p>

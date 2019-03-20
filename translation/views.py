@@ -5,6 +5,9 @@ from .models import Search
 from .models import Translation
 from django.db.models import Q
 
+from django_filters.views import FilterView
+from .filters import TranslationFilter
+
 from django.views.generic import (
 CreateView,
 DetailView,
@@ -18,26 +21,12 @@ class TranslationListView(ListView):
     template_name = 'translation/translation_list.html'
     queryset = Translation.objects.all()
 
-class TranslationSearch(ListView):
+class TranslationSearch(FilterView):
     model = Translation
-
-    def get_queryset(self):
-        origin_text = self.kwargs["origin_text"]
-        if origin_text:
-            return self.model.objects.filter(body__icontains=origin_text)
-        return self.model.objects.none()
-
-
-def add_search(request):
-    if request.method == "POST":
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            search_item = form.save(commit=False)
-            search_item.save()
-            return redirect('/search/'+str(search_item.id)+'/')
-    else:
-        form = SearchForm()
-    return render(request, 'translation/search_list.html', {'form':form})
+    filterset_class = TranslationFilter
+    context_object_name = 'origin_text'
+    paginate_by = 50
+    template_name = 'translation/search_list.html'
 
 def add_translation(request):
     if request.method == "POST":
@@ -49,14 +38,6 @@ def add_translation(request):
     else:
         form = TranslationForm()
     return render(request, 'translation/translation_form.html', {'form':form})
-
-def edit_search(request, id=None):
-    item = get_object_or_404(Search, id=id)
-    form = SearchForm(request.POST or None, instance=item)
-    if form.is_valid():
-        form.save()
-        return redirect('/search/'+str(item.id)+'/')
-    return render(request, 'translation/search_form.html', {'form':form})
 
 def edit_translation(request, id=None):
     item = get_object_or_404(Translation, id=id)
