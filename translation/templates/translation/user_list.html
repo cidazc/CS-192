@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+  <tr>
+    <th>User</th>
+  </tr>
+{% for instance in object_list %}
+  <tr>
+      <td> {{ instance.username }} </td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

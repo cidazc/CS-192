@@ -7,6 +7,8 @@ from django.db.models import Q
 
 from django_filters.views import FilterView
 from .filters import TranslationFilter
+from django.contrib.auth.models import User
+
 
 from django.views.generic import (
 CreateView,

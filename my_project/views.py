@@ -3,12 +3,12 @@
 
 """
 
-Allan Matthew B. Mariano 
+Allan Matthew B. Mariano
 2015-05804
 
 
 “This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof.
- Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, 
+ Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines,
  Diliman for the AY 2018-2019”.
 
 """
@@ -45,7 +45,7 @@ This is a course requirement for CS 192 Software Engineering II under the superv
 Code History:
        -CID AZCARRAGA|FEB-7-2019| Creation of this Code
        -CID AZCARRAGA|FEB-*-2019| Addition of License, Code History, and other Information to Code
-    
+
 Information:
      file creation: This was generated February 7, 2019.
      development group: Salin - Group 2
@@ -58,10 +58,54 @@ Information:
 from django.contrib.auth.models import User
 from django.conf.urls import url
 from django.http import HttpResponse
-from my_project.models import Translation
+#from my_project.models import Translation
 
 def home(request):
-    return HttpResponse('<h1> Welcome </h1>')
+    #return HttpResponse('<h1> Welcome </h1>')
+    try:
+        html = '''<!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>My App</title>
+            <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <style>
+              body{
+                background-color: yellowgreen
+              }
+            </style>
+          </head>
+          <body>
+            <div>
+              <div class="jumbotron text-center">
+                <h1>Salin</h1>
+              </div>
+              <div id="app">
+                <h3>Log-in</h3>
+                <input placeholder="Username">
+                <input placeholder="Password">
+                <br>
+                <a href = "login.html">Log-in</a>
+              </div>
+              <script src="index.js"></script>
+            </div>
+          </body>
+        </html>'''
+        return HttpResponse(html)
+    except:
+        title = 'Error'
+        html = '''<!DOCTYPE html>
+        <html>
+        <head>
+            <title>''' + title + '''</title>
+        </head>
+        <body>
+            <h1>Error!!</h1>
+        </body>
+        </html>'''
+        return HttpResponse(html)
 
 def delete(request):
     try:
@@ -176,47 +220,6 @@ def add2(request):
         </html>'''
         return HttpResponse(html)
 
-def addTranslation(request):
-    #try:
-    b = Translation()
-    b.origin_language = "Visaya"
-    b.target_language = "Filipino"
-    b.origin_text = "ambot"
-    b.target_text = "ewan"
-    b.context_examples = "ambot sa imo"
-    b.upvotes = 69
-    b.downvotes = 1
-    b.save()
-
-    title = 'Translation Added!'
-    html = '''<!DOCTYPE html>
-    <html>
-    <head>
-        <title>''' + title + '''</title>
-    </head>
-    <body>
-        <h1>Translation added</h1>
-    </body>
-    </html>'''
-    return HttpResponse(html)
-    #except: 
-    '''
-        title = 'Error'
-        html = <!DOCTYPE html>
-        <html>
-        <head>
-            <title> + title + </title>
-        </head>
-        <body>
-            <h1>Error!!</h1>
-        </body>
-        </html>
-        return HttpResponse(html) 
-
-    '''
-
-
-
 def moderator(request):
     title = 'User added'
     html = '''<!DOCTYPE html>
@@ -234,16 +237,3 @@ def moderator(request):
     </body>
     </html>'''
     return HttpResponse(html)
-
-
-urlpatterns = [
-    url(r'^$', home),
-    url(r'^delete/$', delete),
-    url(r'^delete2/$', delete2),
-    url(r'^moderator/$', moderator),
-    url(r'^add/$', add),
-    url(r'^add2/$', add2),
-    url(r'^add/$', addTranslation)
-    
-
-]

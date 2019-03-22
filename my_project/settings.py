@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'translation',
     'django_filters',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
