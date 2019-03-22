@@ -6,10 +6,13 @@
 
 
 {%block content%}
-  <h2> Sign up </h2>
+  <h2> Moderator Create Account </h2>
   <form  method = "post">
     {%csrf_token%}
     {{form.as_p}}
     <button type = "submit"> Sign up </button>
   </form>
+  <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
+  <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
+
 {%endblock%}

@@ -109,7 +109,7 @@ def home(request):
 
 def delete(request):
     try:
-        u = User.objects.get(username = "admin")
+        u = User.objects.get(username = request)
         u.delete()
 
         title = 'User admin deleted'
@@ -119,91 +119,7 @@ def delete(request):
             <title>''' + title + '''</title>
         </head>
         <body>
-            <h1>User admin deleted</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-    except:
-        title = 'Error'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>Error!!</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-
-def delete2(request):
-    try:
-        u = User.objects.get(username = "admin2")
-        u.delete()
-
-        title = 'User admin2 deleted'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>User admin2 deleted</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-    except:
-        title = 'Error'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>Error!!</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-
-def add(request):
-    try:
-        user = User.objects.create_user('admin', 'admin@admin.com', 'password')
-        user.save()
-        title = 'User admin added'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>User admin added</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-    except:
-        title = 'Error'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>Error!!</h1>
-        </body>
-        </html>'''
-        return HttpResponse(html)
-def add2(request):
-    try:
-        user = User.objects.create_user('admin2', 'admin@admin.com', 'password')
-        user.save()
-        title = 'User admin2 added'
-        html = '''<!DOCTYPE html>
-        <html>
-        <head>
-            <title>''' + title + '''</title>
-        </head>
-        <body>
-            <h1>User  admin2 added</h1>
+            <h1>User ''' + request + '''deleted</h1>
         </body>
         </html>'''
         return HttpResponse(html)
@@ -228,11 +144,11 @@ def moderator(request):
         <title>''' + title + '''</title>
     </head>
     <body>
+        <h1> Moderator/Contributor Page </h1>
         <form>
-            <input type="button" value="Delete admin" onclick="window.location.href='http://localhost:8000/delete'"/>
-            <input type="button" value="Delete admin2" onclick="window.location.href='http://localhost:8000/delete2'"/>
-            <input type="button" value="Add admin" onclick="window.location.href='http://localhost:8000/add'"/>
-            <input type="button" value="Add admin2" onclick="window.location.href='http://localhost:8000/add2'"/>
+            <input type="button" value="Delete admin" onclick="window.location.href='http://localhost:8000/accounts/remove_user'"/>
+            <input type="button" value="Add User" onclick="window.location.href='http://localhost:8000/accounts/signup/'"/>
+            <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
         </form>
     </body>
     </html>'''

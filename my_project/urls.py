@@ -90,9 +90,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')), # new
     path('', TemplateView.as_view(template_name='home.html'), name='home'), # new
     path('delete', views.delete),
-    path('add', views.add),
-    path('delete2', views.delete2),
-    path('add2', views.add2),
 #    path('addTranslation', views.addTranslation),
     path('moderator', views.moderator),
     url(r'^', include('translation.urls')),
