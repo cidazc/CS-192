@@ -2,8 +2,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import UserForm
-
+from .forms import UserForm, UsernameForm
+from django.contrib.auth.models import User
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
@@ -28,9 +28,15 @@ class SignUp(generic.CreateView):
 
 def remove_user(request):
     print("It is here")
-    form = UserForm(request.POST, instance = request.user)
+    form = UsernameForm(request.POST, instance = request.user)
     if form.is_valid:
         print(request.POST.copy())
+        data = request.POST.copy()
+        delete = data.get('username')
+        print(delete)
+        u = User.objects.get(username = delete)
+        u.delete()
+
     else:
         messages.error(request,form.errors)
     context = {'form': form}
