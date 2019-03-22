@@ -29,15 +29,17 @@ class SignUp(generic.CreateView):
 def remove_user(request):
     print("It is here")
     form = UsernameForm(request.POST, instance = request.user)
-    if form.is_valid:
-        print(request.POST.copy())
-        data = request.POST.copy()
-        delete = data.get('username')
-        print(delete)
-        u = User.objects.get(username = delete)
-        u.delete()
+    if request.method == "POST":
+        if form.is_valid:
+            print("It is here 2")
+            print(request.POST.copy())
+            data = request.POST.copy()
+            delete = data.get('username')
+            print(delete)
+            u = User.objects.get(username = delete)
+            u.delete()
 
-    else:
-        messages.error(request,form.errors)
+        else:
+            messages.error(request,form.errors)
     context = {'form': form}
     return render(request,'remove_user.html', context)
