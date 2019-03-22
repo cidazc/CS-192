@@ -146,7 +146,7 @@ def moderator(request):
     <body>
         <h1> Moderator/Contributor Page </h1>
         <form>
-            <input type="button" value="Delete admin" onclick="window.location.href='http://localhost:8000/accounts/remove_user'"/>
+            <input type="button" value="Delete User" onclick="window.location.href='http://localhost:8000/accounts/remove_user'"/>
             <input type="button" value="Add User" onclick="window.location.href='http://localhost:8000/accounts/signup/'"/>
             <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
         </form>

@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.shortcuts import render, get_object_or_404, redirect
@@ -9,37 +10,29 @@ class SignUp(generic.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
 #
-# def remove_user(request):
-#     if request.method == 'POST':
-#         form = RemoveUser(request.POST)
-#
-#         if form.is_valid():
-#             rem = User.objects.get(username=form.cleaned_data['username'])
-#             if rem is not None:
-#                 rem.delete()
-#                 return redirect('main')
-#             else:
-#                ## Send some error messgae
-#                 print("There is an error")
-#     else:
-#         form = RemoveUser()
-#     context = {'form': form}
-#     return render(request, 'remove_user.html', context)
+def user_deleted(request):
+    return render(request, 'user_deleted.html')
 
 def remove_user(request):
     print("It is here")
     form = UsernameForm(request.POST, instance = request.user)
-    if request.method == "POST":
-        if form.is_valid:
-            print("It is here 2")
-            print(request.POST.copy())
-            data = request.POST.copy()
-            delete = data.get('username')
-            print(delete)
-            u = User.objects.get(username = delete)
-            u.delete()
+    try:
+        if request.method == "POST":
+            if form.is_valid:
+                print("It is here 2")
+                print(request.POST.copy())
+                data = request.POST.copy()
+                delete = data.get('username')
+                print(delete)
+                u = User.objects.get(username = delete)
+                u.delete()
+                return render(request,'user_deleted.html')
 
-        else:
-            messages.error(request,form.errors)
+
+    except:
+        messages.error(request,form.errors)
+        print("Username does not exist")
+        return render(request,'user_does_not_exist.html')
+
     context = {'form': form}
     return render(request,'remove_user.html', context)
