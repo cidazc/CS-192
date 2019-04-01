@@ -1,6 +1,12 @@
-<form method="POST" action="">
-  {% csrf_token %}
-  {{form}}
-  <input type="submit" value="Save">
-</form>
+<div class='jumbotron'>
+  <form method="POST" action="">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }}: {{ field }}
+    </div>
+  {% endfor %}  <input type="submit" value="Add">
+  </form>
+</div>
 <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
