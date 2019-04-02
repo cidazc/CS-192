@@ -75,16 +75,12 @@ Information:
 	        <title>''' + title + '''</title>
 	    </head>
 	    <body>
-			<div class="jumbotron">
-				<div class="container-fluid">
-					<h1>Hi {{ user.username }}!</h1>
-					<p><a href="{% url 'logout' %}">Logout</a></p>
-					<form>
-						<input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
-					</form>
-					<input type="button" value="Add Translation" onclick="window.location.href='http://localhost:8000/translation/add/'"/>
-					</div>
-			</div>
+			<h1>Hi {{ user.username }}!</h1>
+			<p><a href="{% url 'logout' %}">Logout</a></p>
+			<form>
+				<input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
+			</form>
+			<input type="button" value="Add Translation" onclick="window.location.href='http://localhost:8000/translation/add/'"/>
 		</body>
 	 </html>
 {% else %}
@@ -93,10 +89,28 @@ Information:
 	        <title>''' + title + '''</title>
 	    </head>
 	    <body>
-			<div class="jumbotron">
-				<div class="container-fluid mx-auto text-center vertical-center" style="width:200px;">
-					You are not logged in <a href="{% url 'login' %}">Login</a>
+			<div class='container-fluid'>
+				<div class='row-fluid'>
+					<div class='col text-right mt-2 mb-2'>
+						<p class='mb-1'>
+							<span class='text-muted'>You are not logged in </span><a href="{% url 'login' %}">Login</a>
+						</p>
+					</div>
 				</div>
+				<div class='jumbotron text-center ' id='salin-search'>
+						<h1 class='jumbotron-heading display-2'
+							style="font-family: 'Capriola', sans-serif !important;
+							color:#344B2C;">
+							SALIN
+						</h1>
+						<h2 class='text-muted mb-5'
+							style="font-family: 'Capriola', sans-serif !important;
+									color:#4C5E44;">
+							bayanihan sa wika
+						</h2>
+						<input type="button" value="Search" onclick="window.location.href='http://localhost:8000/translation_search/'"/>
+						<input type="button" value="View All Translations" onclick="window.location.href='http://localhost:8000/translation/'"/>		
+					</div>
 			</div>
 			<!-- <form>
 	            <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>

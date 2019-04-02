@@ -63,15 +63,14 @@ Allan Matthew B. Mariano
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-     <h2>Salin</h2>
-     <form method="post">
+<!-- <div class = 'container'> -->
+     <h2 class='pt-3'>Salin</h2>
+     <form method="post" class='form-signin'>
           {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">Login</button>
-     </form>
-</div>
-
-
-
+          <div class='mb-3'>
+                    <button type="submit" class="btn btn-lg btn-primary">Login</button>
+          </div>
+     </form>     
+<!-- </div> -->
 {% endblock %}

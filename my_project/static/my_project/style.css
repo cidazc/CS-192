@@ -1,1 +1,9 @@
-body {background-color: #B9FF47;}
+/* body {background-color: #B9FF47;} */
+#salin-search{
+    background-color: #B9FF47;
+    height: 90vh;
+    /* font-family: 'Capriola', sans-serif !important; */
+};
+html,body,.container {
+    height:100%;
+}

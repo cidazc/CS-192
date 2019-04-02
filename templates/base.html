@@ -71,15 +71,14 @@ Information:
 <head>
      <meta charset="utf-8">
      <title>{% block title %}Salin:Translation{% endblock %}</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'my_project/style.css' %}">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{% static 'my_project/style.css' %}">
+     <link href="https://fonts.googleapis.com/css?family=Capriola" rel="stylesheet"> 
 </head>
 <body>
      <main>
           {% block content %}
           {% endblock %}
-          <input type="button" value="Search" onclick="window.location.href='http://localhost:8000/translation_search/'"/>
-					<input type="button" value="View All Translations" onclick="window.location.href='http://localhost:8000/translation/'"/>
      </main>
 </body>
 </html>
