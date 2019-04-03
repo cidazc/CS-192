@@ -63,14 +63,17 @@ Allan Matthew B. Mariano
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<!-- <div class = 'container'> -->
-     <h2 class='pt-3'>Salin</h2>
-     <form method="post" class='form-signin'>
-          {% csrf_token %}
-          {{ form.as_p }}
-          <div class='mb-3'>
-                    <button type="submit" class="btn btn-lg btn-primary">Login</button>
-          </div>
-     </form>     
-<!-- </div> -->
+<div class='vertical-center'>
+     <div class = 'container text-center fill'>
+          <h2 class='pt-3 display-3 capriola'>SALIN</h2>
+          <form method="post" class='form-signin'>
+               {% csrf_token %}
+               {{ form.as_p }}
+               <div class='mb-3'>
+                    <button type="submit" class="btn btn-lg  salin-button-green btn-primary">Login</button>
+               </div>
+          </form>     
+     </div>
+</div>
+
 {% endblock %}

@@ -75,12 +75,62 @@ Information:
 	        <title>''' + title + '''</title>
 	    </head>
 	    <body>
-			<h1>Hi {{ user.username }}!</h1>
-			<p><a href="{% url 'logout' %}">Logout</a></p>
-			<form>
-				<input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
-			</form>
-			<input type="button" value="Add Translation" onclick="window.location.href='http://localhost:8000/translation/add/'"/>
+			<div class='container-fluid'>
+				<div class='row salin-green navbar'>
+					<div class='col capriola'>
+						SALIN
+					</div>
+					<div class='col text-right'>
+							<p class='mb-0'>
+								<span class='mr-2'>
+									Hi {{ user.username }}!
+								</span>
+								<a href="{% url 'logout' %}">Logout</a>
+							</p>
+					</div>
+				</div>
+				<div class=' row salin-green text-right'>
+					<div class='col'>
+						<form>
+							<input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
+						</form>
+					</div>
+				</div>
+
+				<div class='row salin-green jumbotron text-center'>
+					<div class='col'>
+						<h1 class='display-2 capriola' style="color:#344B2C;">
+								SALIN
+						</h1>
+						<h2 class='text-muted mb-5 capriola' style="color:#4C5E44;">
+						bayanihan sa wika
+						</h2>
+						<input type="button" value="Add Translation" onclick="window.location.href='http://localhost:8000/translation/add/'"/>	
+						<input type="button" value="Search" onclick="window.location.href='http://localhost:8000/translation_search/'"/>
+						<input type="button" value="View All Translations" onclick="window.location.href='http://localhost:8000/translation/'"/>		
+
+					</div>
+				</div>
+			</div>
+			<!-- <div class = 'container-fluid'>
+				<div class='row-fluid'>
+					<div class='jumbotron text-center' id='salin-search'>
+							<h1 class='jumbotron-heading display-2'
+								style="font-family: 'Capriola', sans-serif !important;
+								color:#344B2C;">
+								SALIN
+							</h1>
+							<h2 class='text-muted mb-5'
+								style="font-family: 'Capriola', sans-serif !important;
+										color:#4C5E44;">
+								bayanihan sa wika
+							</h2>
+							<input type="button" value="Search" onclick="window.location.href='http://localhost:8000/translation_search/'"/>
+							<input type="button" value="View All Translations" onclick="window.location.href='http://localhost:8000/translation/'"/>		
+						</div>				
+		
+				</div>
+				</div>				 -->
 		</body>
 	 </html>
 {% else %}
@@ -98,19 +148,19 @@ Information:
 					</div>
 				</div>
 				<div class='jumbotron text-center ' id='salin-search'>
-						<h1 class='jumbotron-heading display-2'
-							style="font-family: 'Capriola', sans-serif !important;
-							color:#344B2C;">
-							SALIN
-						</h1>
-						<h2 class='text-muted mb-5'
-							style="font-family: 'Capriola', sans-serif !important;
-									color:#4C5E44;">
-							bayanihan sa wika
-						</h2>
+					<h1 class='jumbotron-heading display-2'
+						style="font-family: 'Capriola', sans-serif !important;
+						color:#344B2C;">
+						SALIN
+					</h1>
+					<h2 class='text-muted mb-5'
+						style="font-family: 'Capriola', sans-serif !important;
+								color:#4C5E44;">
+						bayanihan sa wika
+					</h2>
 						<input type="button" value="Search" onclick="window.location.href='http://localhost:8000/translation_search/'"/>
 						<input type="button" value="View All Translations" onclick="window.location.href='http://localhost:8000/translation/'"/>		
-					</div>
+				</div>
 			</div>
 			<!-- <form>
 	            <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/>
