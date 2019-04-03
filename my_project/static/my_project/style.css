@@ -45,4 +45,17 @@ html , body {
   
     display: flex;
     align-items: center;
-  }
+}
+
+a:link    {color:#000;}  /* unvisited link  */
+a:visited {color:#000;}  /* visited link    */
+a:hover   {color:#000;text-decoration: none;}  /* mouse over link */
+a:active  {color:#000;} 
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+}
+  

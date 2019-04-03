@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Moderator Page{% endblock %}
+
+{% block content %}
+
+<html>
+
+<head>
+    <title>''' + Moderator Page + '''</title>
+</head>
+<body>
+    <div class='container-fluid'>
+        <div class='row salin-green navbar'>
+            <div class='col capriola text-dark'>
+                <a href="{% url 'home' %}"> SALIN</a>
+            </div>
+            <div class='col text-right'>
+                    <!-- <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/> -->
+                    <p class='mb-0'>
+                        <a href="{% url 'moderator' %}">{{ user.username }}</a> |
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </p>
+            </div>
+        </div>
+        <div class='row'>
+            <h1> Moderator/Contributor Page </h1>
+            <form>
+                <input type="button" value="Delete User" onclick="window.location.href='http://localhost:8000/accounts/remove_user'"/>
+                <input type="button" value="Add User" onclick="window.location.href='http://localhost:8000/accounts/signup/'"/>
+                <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>'''
+    
+
+{% endblock %}
