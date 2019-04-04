@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<html>
+
+<head>
+    <title>''' + Dashboard + '''</title>
+</head>
+<body>
+    <div class='container-fluid'>
+        <div class='row salin-green navbar '>
+            <div class='col capriola text-dark'>
+                <a href="{% url 'home' %}"> SALIN</a>
+            </div>
+            <div class='col text-right'>
+                    <!-- <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/> -->
+                    <p class='mb-0'>
+                        <a href="{% url 'dashboard' %}">{{ user.username }}</a> |
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </p>
+            </div>
+        </div>
+        <div class='container bg-white fill off-center-container rounded mt-3 mr-6'>
+            <div class='row pl-4 pt-2 border-bottom mb-2'>
+                <h1 class=' display-4 quicksand'> Dashboard </h1>
+            </div>
+            <div class='row mt-4 pl-5 pr-5'>
+                <div class='col-1'></div>
+                <div class='col-4 text-center border rounded pb-5 pt-5 bg-light mr-5'>
+                    <p>Create a new account</p>
+                    <form>
+                        <input type="button" value="Add User" onclick="window.location.href='http://localhost:8000/accounts/signup/'"/>
+                    </form>    
+                </div>
+                <div class='col-4 text-center border rounded pb-5 pt-5 bg-light ml-5'>
+                    <p>Delete an existing account</p>
+                    <form>
+                        <input type="button" value="Delete User" onclick="window.location.href='http://localhost:8000/accounts/remove_user'"/>
+                    </form>
+                </div>
+                <div class='col-1'></div>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>
+    
+
+{% endblock %}

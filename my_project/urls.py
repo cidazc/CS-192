@@ -91,6 +91,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'), # new
     path('delete', views.delete),
 #    path('addTranslation', views.addTranslation),
-    path('moderator', TemplateView.as_view(template_name='moderator.html'), name='moderator'),
+    path('dashboard', TemplateView.as_view(template_name='dashboard.html'), name='dashboard'),
     url(r'^', include('translation.urls')),
 ]
