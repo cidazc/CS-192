@@ -1,12 +1,80 @@
-<div class='jumbotron'>
-  <form method="POST" action="">
-    {% csrf_token %}
-    {% for field in form %}
-    <div class="fieldWrapper">
-        {{ field.errors }}
-        {{ field.label_tag }}: {{ field }}
-    </div>
-  {% endfor %}  <input type="submit" value="Add">
-  </form>
+{% extends "base.html" %}
+{% block content %}
+<div class='container-fluid scrollable'>
+  <div class='row salin-green navbar'>
+      <div class='col capriola text-dark'>
+        <a href="{% url 'home' %}"> SALIN</a>
+      </div>
+      <div class='col text-right'>
+          <!-- <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/> -->
+          <p class='mb-0'>
+            <a href="{% url 'dashboard' %}">{{ user.username }}</a> |
+            <a href="{% url 'logout' %}">Logout</a>
+          </p>
+      </div>
+  </div>
+  <div class='container bg-white off-center-container rounded mt-3 mr-6 mb-4 pb-3 pt-3'>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class='row'>
+        <div class='container'>
+          <div class='form-group row'>
+              <div class='col-6'>
+                {{ form.origin_text.label_tag }}           
+              </div>
+              <div class='col-6'>
+                {{ form.target_text.label_tag }}      
+              </div>              
+          </div>
+          <div class='form-group row'>
+              <div class='col-6'>
+                {{ form.origin_text }}             
+              </div>
+              <div class='col-6'>
+                {{ form.target_text }}                 
+              </div>              
+          </div>
+        </div>
+      </div>
+      <div class='form-group row'>
+          <div class='col'>
+              {{ form.origin_language.label_tag }} {{ form.origin_language }} 
+          </div>
+          <div class='col'>
+              {{ form.target_language.label_tag }} {{ form.target_language }}               
+          </div>
+      </div>
+      <div class='row'>
+          <div class='col'>
+            {{ form.context_examples.label_tag }} {{ form.context_examples }}                     
+          </div>  
+      </div>
+      <div class='row d-none'>
+          {{ form.upvotes.label_tag }}: {{ form.upvotes }} 
+          {{ form.downvotes.label_tag }}: {{ form.downvotes }}             
+      </div>
+      
+      <!-- {% for field in form %}
+      <div class="fieldWrapper">
+          {{ field.errors }}
+          {{ field.label_tag }}: {{ field }}
+      </div> -->
+    <!-- {% endfor %}   -->
+      <div class = 'row mt-3'>
+        <div class = 'col-2'></div>
+        <div class = 'col'>
+            <button type="submit" class="btn btn-lg btn-block salin-button-green btn-primary">Submit</button>
+        </div>
+        <div class = 'col-2'></div>
+      </div>
+    </form>
+  </div>
 </div>
-<input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
+{% endblock %}
+<!-- origin_language = models. CharField(max_length = 250, default='Filipino')
+target_language = models. CharField(max_length = 250, default='English')
+origin_text = models. CharField(max_length = 250, default='Kamusta')
+target_text = models. CharField(max_length = 250, default='How are you')
+context_examples = models. CharField(max_length = 500, default='Kamusta ka ba? -> How are you already?')
+upvotes = models.IntegerField(default=100000)
+downvotes = models.IntegerField(default=10) -->

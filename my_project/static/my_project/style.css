@@ -9,11 +9,14 @@ html , body {
     width: 100%;
     margin:0px;
     padding:0px;
+    overflow: auto;
 }
 
 .capriola{
     font-family: 'Capriola', sans-serif !important;
 }
+
+
 
 .segoe{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
@@ -55,6 +58,10 @@ html , body {
 .fill { 
     min-height: 100%;
     height: 100%;
+}
+
+.scrollable {
+    overflow: auto;
 }
 
 .fill-width{

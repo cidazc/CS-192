@@ -5,11 +5,11 @@ from django.db import models
 class Translation(models.Model):
 	origin_language = models. CharField(max_length = 250, default='Filipino')
 	target_language = models. CharField(max_length = 250, default='English')
-	origin_text = models. CharField(max_length = 250, default='Kamusta')
-	target_text = models. CharField(max_length = 250, default='How are you')
-	context_examples = models. CharField(max_length = 500, default='Kamusta ka ba? -> How are you already?')
-	upvotes = models.IntegerField(default=100000)
-	downvotes = models.IntegerField(default=10)
+	origin_text = models. CharField(max_length = 250, default='')
+	target_text = models. CharField(max_length = 250, default='')
+	context_examples = models. CharField(max_length = 500, default='')
+	upvotes = models.IntegerField(default=0)
+	downvotes = models.IntegerField(default=0)
 
 
 class Search(models.Model):
