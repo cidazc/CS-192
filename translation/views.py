@@ -63,7 +63,7 @@ def delete_translation(request):
                 data = request.POST.copy()
                 delete = data.get('origin_text')
                 print(delete)
-                to_delete = get_object_or_404(Translation, origin_text = delete)
+                to_delete = Translation.objects.filter(origin_text = delete)
                 to_delete.delete()
                 return render(request,'translation/translation_deleted.html')
     except:
