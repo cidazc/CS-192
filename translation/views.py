@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from .forms import SearchForm
 from .forms import TranslationForm
+from .forms import TranslationOriginTextForm
 from .models import Search
 from .models import Translation
+from .models import Translation_origin_text
 from django.db.models import Q
 
 from django_filters.views import FilterView
@@ -48,6 +51,28 @@ def edit_translation(request, id=None):
         form.save()
         return redirect('/translation/'+str(item.id)+'/')
     return render(request, 'translation/translation_form.html', {'form':form})
+
+def delete_translation(request):
+    print("It is here")
+    form = TranslationOriginTextForm(request.POST)
+    try:
+        if request.method == "POST":
+            if form.is_valid:
+                print("It is here 2")
+                print(request.POST.copy())
+                data = request.POST.copy()
+                delete = data.get('origin_text')
+                print(delete)
+                to_delete = get_object_or_404(Translation, origin_text = delete)
+                to_delete.delete()
+                return render(request,'translation/translation_deleted.html')
+    except:
+        messages.error(request,form.errors)
+        print("Translation does not exist")
+        return render(request,'translation/translation_does_not_exist.html')
+
+    context = {'form': form}
+    return render(request,'translation/delete_translation.html', context)
 
 def search(request, id=id):
     search = Search.objects.get(id=id)

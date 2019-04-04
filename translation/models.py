@@ -16,3 +16,6 @@ class Search(models.Model):
     search_text = models.CharField(max_length=255, default='Add a value here', blank=True)
     def __str__(self):
         return '%s' % self.search_text
+
+class Translation_origin_text(models.Model):
+	origin_text = models. CharField(max_length = 250)

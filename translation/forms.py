@@ -1,6 +1,7 @@
 from django.forms import ModelForm, TextInput, Textarea
 from .models import Search
 from .models import Translation
+from .models import Translation_origin_text
 from django.contrib.auth.models import User
 
 class SearchForm(ModelForm):
@@ -37,6 +38,11 @@ class TranslationForm(ModelForm):
             'target_language':'Target language',
             'context_examples':'Usage',
         }
+
+class TranslationOriginTextForm(ModelForm):
+    class Meta:
+        model = Translation_origin_text
+        fields = '__all__'
 
 
 class MakeUserForm(ModelForm):
