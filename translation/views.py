@@ -81,7 +81,9 @@ def upvote(request):
     form = UpvoteForm(request.POST)
     try:
         if request.method == "POST":
+            print("Posty boi")
             if form.is_valid:
+                print("Valid boi")
                 print(request.POST.copy())
                 data = request.POST.copy()
                 text = data.get('origin_text')
@@ -89,14 +91,12 @@ def upvote(request):
                 u = Translation.objects.get(origin_text = text)
                 u.upvotes = u.upvotes + 1
                 u.save()
-                return render(request,'translation/translation.html')
-
-
+                return render(request,'translation/votesuccess.html')
     except:
         messages.error(request,form.errors)
         print("Translation does not exist")
         return render(request,'translation/translation_dne.html')
-
+    print("No redirect boi")
     context = {'form': form}
     return render(request,'translation/user_upvote.html', context)
 
@@ -113,8 +113,7 @@ def downvote(request):
                 u = Translation.objects.get(origin_text = text)
                 u.downvotes = u.downvotes + 1
                 u.save()
-                return render(request,'translation/translation_list.html')
-
+                return render(request,'translation/votesuccess.html')
 
     except:
         messages.error(request,form.errors)
