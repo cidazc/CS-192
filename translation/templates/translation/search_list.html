@@ -1,32 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="" method="get">
-        {{ filter.form.as_p }}
-        <input type="submit" />
-    </form>
-    <input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>
-    <table>
-      <tr>
-        <th>Origin Language</th>
-        <th>Target_Language</th>
-        <th>Origin Text</th>
-        <th>Target Text</th>
-        <th>Context Examples</th>
-        <th>Upvotes</th>
-        <th>Downvotes</th>
-      </tr>
-    {% for obj in filter.qs %}
-        <tr>
-        <td> {{ obj.origin_language }} </td>
-        <td> {{ obj.target_language }} </td>
-        <td> {{ obj.origin_text }} </td>
-        <td> {{ obj.target_text }} </td>
-        <td> {{ obj.context_examples }} </td>
-        <td> {{ obj.upvotes }} </td>
-        <td> {{ obj.downvotes }} </td>
-        </tr>
-    {% endfor %}
-    </table>
-{% endblock %}
-    </p>
+    <div class='container-fluid scrollable'>
+      <div class='row salin-green navbar'>
+        <div class='col capriola text-dark'>
+          <a href="{% url 'home' %}"> SALIN</a>
+        </div>
+        <div class='col text-right'>
+            <!-- <input type="button" value="Moderator Page" onclick="window.location.href='http://localhost:8000/moderator'"/> -->
+            <p class='mb-0'>
+              <a href="{% url 'dashboard' %}">{{ user.username }}</a> |
+              <a href="{% url 'logout' %}">Logout</a>
+            </p>
+        </div>
+      </div>
+      <div class='container bg-white off-center-container-list rounded mt-3 mr-6 mb-4 pb-3 pt-3'>
+        <div class='row mb-4'>
+          <div class='col'>
+            <form action="" method="get">
+              {{ filter.form.origin_text }}
+              <input type="submit" value='Search'/>
+            </form>    
+          </div>
+        </div>
+          <table class='table table striped'>
+          <thead class=''>
+            <tr>
+              <th>Origin Language</th>
+              <th>Target Language</th>
+              <th>Origin Text</th>
+              <th>Target Text</th>
+              <th>Usage</th>
+              <th>Upvotes</th>
+              <th>Downvotes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for obj in filter.qs %}
+            <tr>
+              <td> {{ obj.origin_language }} </td>
+              <td> {{ obj.target_language }} </td>
+              <td> {{ obj.origin_text }} </td>
+              <td> {{ obj.target_text }} </td>
+              <td> {{ obj.context_examples }} </td>
+              <td> {{ obj.upvotes }} </td>
+              <td> {{ obj.downvotes }} </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>  
+      </div>    
+    </div>
+    {% endblock %}

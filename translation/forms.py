@@ -4,9 +4,16 @@ from .models import Translation
 from django.contrib.auth.models import User
 
 class SearchForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')
+        super(TranslationForm, self).__init__(*args, **kwargs)
     class Meta:
         model = Search
         fields = '__all__'
+        labels = {
+            'search_text':'Search',
+        }
+
 
 class TranslationForm(ModelForm):
     def __init__(self, *args, **kwargs):
