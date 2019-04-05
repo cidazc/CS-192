@@ -49,3 +49,13 @@ class MakeUserForm(ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+
+class UpvoteForm(ModelForm):
+    class Meta:
+        model = Translation
+        fields = '__all__'
+
+class DownvoteForm(ModelForm):
+    class Meta:
+        model = Translation
+        fields = '__all__'

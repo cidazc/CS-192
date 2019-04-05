@@ -1,0 +1,6 @@
+<form method="POST" action="">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="Downvote">
+</form>
+<input type="button" value="Home" onclick="window.location.href='http://localhost:8000/'"/>

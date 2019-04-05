@@ -13,5 +13,7 @@ urlpatterns = [
     path('translation/', TranslationListView.as_view(), name = 'translation-list'),
     path('translation_search/', TranslationSearch.as_view(), name = 'translation-search'),
     path('translation/remove/', views.delete_translation, name = 'delete-translation'),
+    path('upvote/', views.upvote, name = 'user_upvote'),
+      path('downvote/', views.downvote, name = 'user_downvote'),
 
 ]
