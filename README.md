@@ -2,6 +2,32 @@
 #### This app  is made to translate languages in a really crude way.
 ##### The creators - Reyster, Allan, Cid
 
+## Running guide for a TL2 computer
+
+In terminal type
+```
+sudo pip install --upgrade pip
+sudo pip install django
+```
+Download the git files
+```
+git clone https://github.com/cidazc/CS-192.git
+cd CS-192/
+```
+
+Restart
+
+Run the app
+```
+python manage.py runserver
+```
+
+Open up your browser to the URL:
+```
+localhost:8000
+```
+
+
 ## Running guide
 
 In terminal type
